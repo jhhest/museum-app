@@ -1,24 +1,43 @@
-// add event handler
+function doesNotPassAllValidations(name, msg) {
+  if (!name || !msg) {
+    alert("You forgot to fill in your name or message!");
+    return true;
+  }
+  if (msg.length > 280) {
+    alert("Your comment is too long");
+    return true;
+  }
+  return false;
+}
+
 function submitComment() {
-  // gather data
+  // gather Data
   const inputField = document.getElementById("name");
-  const name = inputField.value;
   const textArea = document.getElementById("msg");
+
+  const name = inputField.value;
   const msg = textArea.value;
-  // create the elements you need
+
+  // Create SubElements
   const comment = document.createElement("section");
   const h3 = document.createElement("h3");
   const p = document.createElement("p");
-  // adjust the elements we created
+
   h3.innerHTML = `${name} said:`;
   p.innerHTML = msg;
+
   comment.classList.add("comment");
   comment.appendChild(h3);
   comment.appendChild(p);
-  // display the elements on the page
-  const commentSection = document.getElementById("comments");
-  commentSection.appendChild(comment);
-  // reset form values
-  inputField.value = null;
-  textArea.value = null;
+
+  const commentsection = document.getElementById("comments");
+  if (doesNotPassAllValidations(name, msg)) {
+    return null;
+  } else {
+    commentsection.appendChild(comment);
+    console.log(commentsection);
+    inputField.value = null;
+    textArea.value = null;
+    return null;
+  }
 }
