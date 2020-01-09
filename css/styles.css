@@ -23,7 +23,7 @@ h1 {
 }
 #gallery {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
