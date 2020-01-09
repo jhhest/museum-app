@@ -10,6 +10,21 @@
       rel="stylesheet"
     />
     <title>Museum App - Detail Page</title>
+    <script src="detail-page.js"></script>
+
+    <!-- 
+      The user story that belongs to this feature is: A user can leave their name and write a comment, when they click submit, their name and comment will be displayed on the page.
+
+    To accomplish this user story, you have to split it up in smaller steps. If often helps to write these steps out, to keep track of your progress and help formulate questions if you get stuck. In this case, that would look something like:
+    
+    Create an input field for the name, one for the comment and an submit-button
+    Add an event (name and comment) listener/handler to the button
+    Gather data of the input fields
+    Create some elements (to display the data)
+    Adjust the elements so they display the data
+    Display the adjusted elements on your page
+    Empty the input fields so the next user can type some new text. -->
+
   </head>
 
   <body>
@@ -31,7 +46,7 @@
           <p>"This is definitely one of my favorites!"</p>
         </section>
       </section>
-      <form onsubmit="submitComment(); return false">
+      <form onsubmit="submitComment(); ">
         <div class="formSection">
           <label for="name">Name:</label>
           <input type="text" id="name" />
